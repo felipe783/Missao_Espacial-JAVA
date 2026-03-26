@@ -12,7 +12,7 @@ A aplicação possui um **Back End em Java** responsável pela lógica e persist
 ## 💻 Tecnologias Utilizadas
 
 ### 🖥️ Back End
-- Java
+- Java(SpringBoot)
 - MySQL
 - Flyway (migrations)
 
