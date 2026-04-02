@@ -2,7 +2,6 @@ package trabalho.panca.MissaoEspacial.controller;
 import org.springframework.web.bind.annotation.*;
 import trabalho.panca.MissaoEspacial.service.MissaoService;
 import trabalho.panca.MissaoEspacial.model.Missao;
-
 import java.util.List;
 
 // Controla toda e qualquer Requisaçãom, da o caminho da requisição
@@ -10,7 +9,7 @@ import java.util.List;
 //É o porteiro da as rotas
 
 @RestController //Sabe que toda a classe é um controler
-@RequestMapping("/missao")
+@RequestMapping("/missões")
 public class MissaoController {
 
     //Injeção de independencia
@@ -21,8 +20,8 @@ public class MissaoController {
     }
 
     @GetMapping //Ta listando todas as missao
-    public List<Missao> getAll() {return missaoService.getAll(); }
+    public List<Missao> ListarMissao(){return missaoService.findAll(); }
 
     @PostMapping //Mandando pro server
-    public Missao criarMissao(@RequestBody Missao missao) {return missaoService.save(missao) ;}
+    public Missao Create(@RequestBody Missao missao) {return missaoService.save(missao) ;}
 }

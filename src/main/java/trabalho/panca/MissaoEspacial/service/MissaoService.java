@@ -16,7 +16,7 @@ public class MissaoService {
         this.missaoRepository = missaoRepository;
     }
     //LISTAR
-    public List<Missao> getAll(){return missaoRepository.findAll(); }
+    public List<Missao> findAll(){return missaoRepository.findAll(); }
 
     //CRIAR
     public Missao save(Missao missao){return missaoRepository.save(missao); } //Save precisa de uma Entity pra salvar
