@@ -1,5 +1,6 @@
 package trabalho.panca.MissaoEspacial.service;
 import org.springframework.stereotype.Service;
+import trabalho.panca.MissaoEspacial.model.Astronauta;
 import trabalho.panca.MissaoEspacial.model.Equipe;
 import trabalho.panca.MissaoEspacial.repository.EquipeRepository;
 
@@ -21,4 +22,29 @@ public class EquipeService {
 
     //Deletar
     public void delete(Long id){equipeRepository.deleteById(id); }
+
+    //ADD Membros
+    public void addmember(Long id, Astronauta astronauta){
+        Equipe equipe = equipeRepository.findById(id).orElseThrow(()-> new RuntimeException("Equipe não encontrada")); //Busca no banco se não existis lança o "Equipe não encontrada"
+
+        //Pegar o Limite
+        int limite = equipe.getQntMembros();
+
+        //Pegar Quantidade Atual
+        int quantidade = equipe.getAstronautas().size(); //Pega o quantos astronauas tem na equipe pra verificar se não está no limite
+
+        if (quantidade >= limite){
+            throw new RuntimeException("Equipe cheia");
+        }
+        else{
+            //Vincular astronauta a equipe
+            astronauta.setEquipe(equipe);
+
+            //Add o astronauta
+            equipe.getAstronautas().add(astronauta);
+
+            //Salvar no banco
+            equipeRepository.save(equipe);
+        }
+    }
 }
