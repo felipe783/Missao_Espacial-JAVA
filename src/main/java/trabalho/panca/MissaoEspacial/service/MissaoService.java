@@ -51,7 +51,11 @@ public class MissaoService {
     }
 
     //Lançar a Missão ou "INICIAR"
+    public Missao iniciarMissao(Long id){
+        Missao missao = missaoRepository.findById(id).orElseThrow(() -> new RuntimeException("Missão não encontrada"));
 
+        return missaoRepository.save(missao);
+    }
 
     //DELETAR
     public void delete(Long id){missaoRepository.deleteById(id); }

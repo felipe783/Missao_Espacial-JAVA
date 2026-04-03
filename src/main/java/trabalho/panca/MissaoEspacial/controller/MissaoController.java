@@ -23,13 +23,13 @@ public class MissaoController {
     @GetMapping //Ta listando todas as missao
     public List<Missao> ListarMissao(){return missaoService.findAll(); }
 
-    @PostMapping //Iniciar missão
+    @PostMapping //Criando a missão no Sql
     public ResponseEntity<Missao> Create(@RequestBody Missao missao) {
         Missao nova = missaoService.save(missao);
         return ResponseEntity.status(201).body(nova); //
     }
 
-    @PutMapping("/{id}/iniciar")
+    @PutMapping("/{id}/iniciar") //Iniciando a missão
     public ResponseEntity<Missao> Start(@PathVariable Long id){
         Missao missao = missaoService.iniciarMissao(id);
         return ResponseEntity.ok(missao);

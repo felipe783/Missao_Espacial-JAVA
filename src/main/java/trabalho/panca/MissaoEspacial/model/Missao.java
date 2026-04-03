@@ -18,6 +18,10 @@ public class Missao {
     private Satelite satelite;
 
     @ManyToOne
+    @JoinColumn(name = "ID_EQUIPE")
+    private Equipe equipe;
+
+    @ManyToOne
     @JoinColumn(name = "ID_FOGUETE")
     private Foguete foguete;
 
@@ -32,45 +36,30 @@ public class Missao {
 
     public Missao() {}
 
-    public Long getIdMissao() {
-        return idMissao;
-    }
-
-    public Missao(Long idMissao, String status, LocalDateTime dataLancamento, String nomeMissao, Foguete foguete, Satelite satelite) {
+    public Missao(Long idMissao, String status, LocalDateTime dataLancamento, String nomeMissao, Foguete foguete, Equipe equipe, Satelite satelite) {
         this.idMissao = idMissao;
         this.status = status;
         this.dataLancamento = dataLancamento;
         this.nomeMissao = nomeMissao;
         this.foguete = foguete;
+        this.equipe = equipe;
         this.satelite = satelite;
+    }
+
+    public Long getIdMissao() {
+        return idMissao;
     }
 
     public void setIdMissao(Long idMissao) {
         this.idMissao = idMissao;
     }
 
-    public Satelite getSatelite() {
-        return satelite;
+    public String getStatus() {
+        return status;
     }
 
-    public void setSatelite(Satelite satelite) {
-        this.satelite = satelite;
-    }
-
-    public Foguete getFoguete() {
-        return foguete;
-    }
-
-    public void setFoguete(Foguete foguete) {
-        this.foguete = foguete;
-    }
-
-    public String getNomeMissao() {
-        return nomeMissao;
-    }
-
-    public void setNomeMissao(String nomeMissao) {
-        this.nomeMissao = nomeMissao;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public LocalDateTime getDataLancamento() {
@@ -81,12 +70,36 @@ public class Missao {
         this.dataLancamento = dataLancamento;
     }
 
-    public String getStatus() {
-        return status;
+    public String getNomeMissao() {
+        return nomeMissao;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setNomeMissao(String nomeMissao) {
+        this.nomeMissao = nomeMissao;
+    }
+
+    public Foguete getFoguete() {
+        return foguete;
+    }
+
+    public void setFoguete(Foguete foguete) {
+        this.foguete = foguete;
+    }
+
+    public Equipe getEquipe() {
+        return equipe;
+    }
+
+    public void setEquipe(Equipe equipe) {
+        this.equipe = equipe;
+    }
+
+    public Satelite getSatelite() {
+        return satelite;
+    }
+
+    public void setSatelite(Satelite satelite) {
+        this.satelite = satelite;
     }
 }
 
