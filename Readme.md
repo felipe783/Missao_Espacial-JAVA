@@ -17,8 +17,9 @@ A aplicação possui um **Back End em Java** responsável pela lógica e persist
 - Flyway (migrations)
 
 ### 🌐 Front End
-- React
-- TypeScript
+- Html
+- Css
+- JavaScript
 
 ### ⚙️ Infraestrutura
 - Servidor Ubuntu (local)

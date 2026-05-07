@@ -1,4 +1,5 @@
 package trabalho.panca.MissaoEspacial.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 
@@ -21,9 +22,12 @@ public class Astronauta {
     private String status_astronauta;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn( name = "ID_EQUIPE_ASTRONAUTA", referencedColumnName = "ID_EQUIPE" )
     private Equipe equipe;
 
+
+    public Astronauta(){}
     public Astronauta(Long id_astronauta, Equipe equipe, String status_astronauta, double peso_astronauta, String nome_astronauta) {
         this.id_astronauta = id_astronauta;
         this.equipe = equipe;

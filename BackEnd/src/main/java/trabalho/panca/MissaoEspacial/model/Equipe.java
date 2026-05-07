@@ -1,4 +1,5 @@
 package trabalho.panca.MissaoEspacial.model;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +19,13 @@ public class Equipe {
     @Column(name = "QNTD_MEMBROS")
     private int qntMembros;
 
-    @OneToMany(mappedBy = "equipe") //A equipe pode ter varios relacionados a ela
+    @JsonManagedReference
+    @OneToMany(mappedBy = "equipe", cascade = CascadeType.ALL) //A equipe pode ter varios relacionados a ela
     private List<Astronauta> astronautas = new ArrayList<>();
+
+
+    public Equipe() {
+    }
 
     public Equipe(Long id_equipe, String nome_equipe, int qntMembros) {
         this.id_equipe = id_equipe;
