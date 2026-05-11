@@ -25,7 +25,7 @@ function Home() {
         </h1>
       </div>
 
-      <div className="cards">
+      <div className="container-cards">
         <div className="card">
           <h2>Astronautas</h2>
           <p>Gerencie os astronautas da missão.</p>
@@ -46,15 +46,6 @@ function Home() {
           <p>Acompanhe as missões ativas.</p>
         </div>
       </div>
-
-
-      <div className="menu">
-        <span>Astronautas</span>
-        <span>Equipes</span>
-        <span>Foguetes</span>
-        <span>Missão</span>
-      </div>
-
       <div>
         <h1>Repositorio GitHub</h1>
       </div>

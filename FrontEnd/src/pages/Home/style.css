@@ -77,43 +77,20 @@
   word-wrap: break-word;
 }
 
-.menu {
-  font-family: Impact, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  width: fit-content;
-  margin: 40px auto;
-  padding: 15px 40px;
-  background: #252329;
-  border-radius: 999px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.menu span {
-  font-size: 30px;
-  line-height: 1.2;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.menu span:hover {
-  transform: translateY(-5px);
-  font-weight: bold;
-  color: #8c00c4;
-}
-
-.cards {
+.container-cards {
+    position: absolute;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     width: fit-content;
     margin: auto;
+    left:auto;
+    right: 63px;
+    top: 50px;
 }
 
 .card {
-    width: 250px;
+    width: 450px;
     height: 180px;
     background: #252329;
     border-radius: 20px;
@@ -132,9 +109,4 @@
 .card h2 {
     margin-bottom: 10px;
     font-size: 28px;
-}
-
-.card p {
-    font-size: 16px;
-    color: #d1d1d1;
 }
