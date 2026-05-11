@@ -13,12 +13,6 @@ function Home() {
 
   return (
     <>
-      <div className="container-options">
-        <h1>Astronautas</h1>
-        <h1>Equipes</h1>
-        <h1>Foguetes</h1>
-        <h1>Missão</h1>
-      </div>
 
       <div className="main-title">
         <span id="title-mission">Missão</span>
@@ -31,6 +25,29 @@ function Home() {
         </h1>
       </div>
 
+      <div className="cards">
+        <div className="card">
+          <h2>Astronautas</h2>
+          <p>Gerencie os astronautas da missão.</p>
+        </div>
+
+        <div className="card">
+          <h2>Equipes</h2>
+          <p>Controle as equipes espaciais.</p>
+        </div>
+
+        <div className="card">
+          <h2>Foguetes</h2>
+          <p>Veja informações dos foguetes.</p>
+        </div>
+
+        <div className="card">
+          <h2>Missões</h2>
+          <p>Acompanhe as missões ativas.</p>
+        </div>
+      </div>
+
+
       <div className="menu">
         <span>Astronautas</span>
         <span>Equipes</span>
@@ -38,7 +55,9 @@ function Home() {
         <span>Missão</span>
       </div>
 
-
+      <div>
+        <h1>Repositorio GitHub</h1>
+      </div>
     </>
   );
 }
